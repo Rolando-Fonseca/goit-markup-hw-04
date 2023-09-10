@@ -11,6 +11,10 @@ a {
   --button: rgba(33, 150, 243, 1);
   --color_icons: rgba(175, 177, 184, 1);
 }
+
+svg {
+  fill: currentColor;
+}
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -167,6 +171,22 @@ ul {
   background-color: var(--color_white);
 }
 
+.icon_navi {
+  fill: var(--color_icons);
+  width: 16px;
+  height: 12px;
+  gap: 10px;
+}
+
+.link:hover .icon_navi {
+  fill: var(--color_hover);
+}
+
+.link {
+  align-items: center;
+  gap: 10px;
+}
+
 .principal {
   display: flex;
   flex-direction: column;
@@ -175,9 +195,14 @@ ul {
   height: 600px;
 }
 .hero {
-  width: 1600px;
   margin: 0 auto;
-  background-image: url(/imag/hero_img.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../imag/hero_img.jpg);
+  background-size: cover;
 }
 
 .hero_title {
@@ -196,7 +221,13 @@ ul {
   padding: 10px 32px 10px 32px;
   gap: 10px;
   background-color: var(--button);
+  color: var(--color_white);
   cursor: pointer;
+}
+
+.button_contact:hover {
+  background-color: var(--color_hover);
+  color: var(--primary-color);
 }
 
 .menu_services {
@@ -306,9 +337,17 @@ h3 {
   box-shadow: 0px 2px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-.footer_navigation {
-  list-style: none;
+.footer {
+  height: 252px;
+  background-color: black;
 }
+
+.networks_foot {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
 .footer_navigation {
   color: var(--color_white);
   font-family: Roboto;
@@ -325,13 +364,6 @@ h3 {
 
 .current :hover {
   color: var(--color_hover);
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  height: 252px;
-  background-color: black;
 }
 
 .logo_footer {
@@ -442,25 +474,32 @@ h3 {
   color: var(--color_white);
 }
 
-.networks_foot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 30px;
-  cursor: pointer;
-}
-
 .list_f_networks {
-  display: flex;
-  list-style: none;
   border-radius: 50%;
   width: 44px;
   height: 44px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
 }
 .list_f_networks:hover {
   background-color: var(--color_hover);
+}
+
+.about_card {
+  position: relative;
+}
+
+.about_text {
+  font-family: Roboto;
+  font-weight: 700;
+  size: 14px;
+  line-height: 16px;
+  letter-spacing: 3%;
+  color: var(--color_white);
+  background-color: rgba(47, 48, 58, 0.8);
+  bottom: -4%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  height: 70px;
 }
